@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function prime(a) {
+            if (a < 2) {
+                return false;
+            }
+            for (var i = 2; i < a; i++) {
+                if (a % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        var a = prompt("Starting range");
+        var b = prompt("Ending range");
+        var temp1 = 0;
+        var temp2 = 0;
+        for (a; a <= b; a++) {
+            if (prime(a)) {
+                if (temp1 == 0) {
+                    temp1 = a;
+                }
+                else {
+                    temp2 = a;
+                }
+            }
+        }
+        if (temp1 == 0 && temp2 == 0) {
+            document.write("-1");
+        }
+        else if (temp1 == 0 || temp2 == 0) {
+            document.write("0");
+        }
+        else {
+            var test = Math.abs(temp1 - temp2);
+            document.write(temp1)
+            document.write(temp2)
+            document.write(test)
+        }
+    </script>
+</body>
+
+</html>
