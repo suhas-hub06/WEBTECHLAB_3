@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let disarium = (num) => {
+        let arr = num.split("");
+        let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+    let d = parseInt(arr[i]);
+    sum = sum + Math.pow(d, i + 1);
+}
+        let ans = sum.toString();
+        if (ans == num) return 1;
+        else return 0;
+};
+        let dis = new Array();
+        for (let i = 0; i <= 100; i++) {
+        if (disarium(i.toString()) == 1) dis.push(i);
+}
+alert("NUMBERS ARE : " + dis)
+    </script>
+</body>
+</html>
